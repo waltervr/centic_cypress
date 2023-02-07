@@ -7,23 +7,39 @@ Este repositorio contiene una serie de pasos y scripts para iniciar con la autom
 
 ## 01 Preparación
 1. Cree una nueva carpeta donde se va configurar el proyecto.
-2. Abra la carpeta con VS Code
+2. Abra la carpeta con VS Code.
+- En VS Code:
+- Haga click en "File" o "Archivo"
+- Luego en "Open Folder" o "Abrir Carpeta"
 
 ## 02 Configurando Cypress
-1. Abra una terminal y ejecute los siguientes comandos uno después del otro: 
+1. Abra una terminal dentro de VS Code (Ctrl+J) y ejecute los siguientes comandos uno después del otro: 
 - `npm init -y`
-- `npm install cypress`
-2. Una vez completado, abra el "Cypress Runner" con el comando `npx cypress open`.
-3. En la ventana, seleccione "E2E Testing" y luego "Continue".
-4. Finalmente seleccione el navegador de preferencia.
-5. Listo, si todo salió bien deben aparecer un par de opciones:
-- Scaffold example specs - esta opción va a crear una serie de ejemplos del uso de Cypress.
-- Create new spec - esta opción nos brinda la opción para crear un nuevo archivo de prueba en blanco. Aquí damos click y aceptamos las opciones predeterminadas.
-6. Al aceptar las opciones predeterminadas, se va a ejecutar el caso de prueba y veremos los resultados a continuación. Además, se va a completar la estructura del proyecto en VS Code.
-7. Listo, ahora cerramos el navegador y el runner.
 
-## 03 Agregar intelisense a VS Code para comandos de Cypress
-1. En la raíz del proyecto, agregue un nuevo archivo con el nombre `jsconfig.json` y agregue lo siguiente:
+![image](https://user-images.githubusercontent.com/1737635/217127971-0d1dfbe2-bbbc-4975-aa69-56dffaaafebb.png)
+
+- `npm install cypress`
+
+![image](https://user-images.githubusercontent.com/1737635/217128684-6955f5c0-82f4-42d0-8b8e-d2be577ab82b.png)
+
+2. Una vez completado, abra el "Cypress Runner" con el comando `npx cypress open`
+![image](https://user-images.githubusercontent.com/1737635/217129170-d785ea42-4bee-4c44-b82e-4bc89a0c0de6.png)
+
+3. En la ventana, seleccione "E2E Testing" y luego dé click en "Continue".
+4. Espere mientras se configura Cypress, seleccione el navegador de preferencia y dé click en el botón "Start E2E Testing in <Navegador>"
+5. Listo, si todo salió bien deben aparecer un par de opciones:
+![image](https://user-images.githubusercontent.com/1737635/217129996-e0617aad-714f-4571-b307-1ecdfa9ea93d.png)
+
+- Scaffold example specs - esta opción va a crear una serie de ejemplos del uso de Cypress.
+- Create new spec - esta opción nos brinda la opción para crear un nuevo archivo de prueba en blanco. 
+6. Haga click en la opción "Create new spec" y siga las instrucciones en la pantalla de forma predeterminada.
+7. Al aceptar las opciones predeterminadas, se va a ejecutar el caso de prueba de ejemplo y veremos los resultados a continuación. Además, se va a completar la estructura del proyecto en VS Code.
+![image](https://user-images.githubusercontent.com/1737635/217130619-0995f391-46ec-46ce-80b0-ae3124a9260c.png)
+
+8. Listo, ahora cerramos el navegador y el runner.
+
+## 03 Agregar intellisense a VS Code para comandos de Cypress
+1. En VS Code, en la raíz del proyecto, agregue un nuevo archivo con el nombre `jsconfig.json` y agregue lo siguiente:
 ```
 {
     "include": [
@@ -114,7 +130,7 @@ describe('filtering', function() {
 ```
 
 ## Page Objects
-El model de "Page Objects" permite encapsular lógica en archivos separados llamados "pages" lo que permite que el script de "test" sea más limpio y claro en su funcionamiento.
+El modelo de "Page Objects" permite encapsular lógica en archivos separados llamados "pages" lo que permite que el script de "test" sea más limpio y claro en su funcionamiento.
 Para aplicar estos cambios en el código, primero hay que "extraer" lógica del test y agregarla en un nuevo archivo js llamado `todo-page.js` dentro de una carpeta que vamos a crear con el nombre `page-objects` dentro de la carpeta cypress.
 Agregue el código siguiente:
 ```
@@ -160,3 +176,7 @@ describe('todo actions', () => {
   })
 })
 ```
+Volvemos a abrir el runner y ejecutamos el test nuevamente
+![image](https://user-images.githubusercontent.com/1737635/217131781-d8c28d4b-0711-4fac-8e88-73db269b51cb.png)
+
+De esta forma se concluyen los primeros pasos con Cypress.
