@@ -50,6 +50,11 @@ Este repositorio contiene una serie de pasos y scripts para iniciar con la autom
 ```
 2. Listo, esto nos va a permitir auto-completar código de Cypress, ver sugerencias y documentación.
 
+## BONUS
+Cypress automáticamente vuelve a ejecutar el test con cualquier cambio en el código. Esto puede ser útil en algún momento, pero para proyectos grandes, no es una buena opción. Para desctivar este comportamiento, se agrega la propiedad `watchForFileChanges` con el valor `false` en el archivo `cypress.config.js`
+
+![image](https://user-images.githubusercontent.com/1737635/217431487-b8afc0c4-287c-4948-8178-b8a232a29cda.png)
+
 ## 04 Agregando el primer script
 1. Dentro de la carpeta cypress/e2e/ agregue un archivo llamado `todomvc.cy.js` y agregue el siguiente código:
 ```
