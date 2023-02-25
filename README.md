@@ -66,7 +66,7 @@ it('should navigate to the TodoMVC App', () => {
 3. El nuevo script se muestra disponible, para ejecutarlo solamente hay que darle click
 4. Este script solamente abre el sitio web
 
-## 04 Interactuando con elementos
+## 05 Interactuando con elementos
 Reemplace el código del archivo `todomvc.cy.js` con lo siguiente:
 ```
 it('should add a new todo to the list', () => {
@@ -82,7 +82,7 @@ Donde:
 - `cy.get('.toggle').click()` nos permite hacer click sobre un elemento
 - `cy.contains('Clear completed').click()` en vez de utilizar un localizador clásico, utilizamos un localizador relativo utilizando el texto del elemento
 
-## 05 Validaciones
+## 06 Validaciones
 En Cypress las validaciones se hacen con Chai, utilizando el la función `.should` que recibe dos argumentos, el primero es qué vamos a validar y el segundo el valor esperado. 
 Reemplace el código del archivo `todomvc.cy.js` con lo siguiente:
 ```
@@ -101,7 +101,7 @@ Donde:
 - `cy.get('label').should('have.text', 'Clean room')` nos permite validar que la etiqueta seleccionada tenga el valor 'Clean room'
 - `cy.get('.toggle').should('not.be.checked')` nos permite validar que el elemento 'toggle' no esté checkeado
 
-## 06 Agrupando escenarios
+## 07 Agrupando escenarios
 Como buena práctica un caso de prueba solo debe validar una sola cosa, en el script anterior, se hacían tres validaciones es una sola función.
 Para agrupar casos de prueba, las funciones "it", se agrupan dentro de una función "describe" a la que denominaremos "test suite".
 Adicionalmente, cuando hay tests que comparten funcionalidad, podemos agrupar esta funcionalidad en una función llamada "beforeEach", la cuál se va a ejecutar antes de cada test.
@@ -134,7 +134,7 @@ describe('filtering', function() {
 })
 ```
 
-## Page Objects
+## 08 Page Objects
 El modelo de "Page Objects" permite encapsular lógica en archivos separados llamados "pages" lo que permite que el script de "test" sea más limpio y claro en su funcionamiento.
 Para aplicar estos cambios en el código, primero hay que "extraer" lógica del test y agregarla en un nuevo archivo js llamado `todo-page.js` dentro de una carpeta que vamos a crear con el nombre `page-objects` dentro de la carpeta cypress.
 Agregue el código siguiente:
